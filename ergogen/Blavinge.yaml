@@ -1,0 +1,203 @@
+points:
+  zones:
+    matrix:
+      anchor:
+        rotate: 5
+        shift: [100, -100]
+      columns:
+        pinky:
+          key.column_net: P14
+        ring:
+          key.splay: -5
+          key.origin: [-12, -19]
+          key.stagger: 14
+          key.column_net: P16
+        middle:
+          key.stagger: 8
+          key.column_net: P10
+        index:
+          key.stagger: -6
+          key.column_net: P9
+        inner:
+          key.stagger: -2
+          key.column_net: P8   
+      rows:
+        bottom:
+          row_net: P19
+          mirror.row_net: P6
+        home:
+          row_net: P20
+          mirror.row_net: P5
+        top:
+          row_net: P21
+          mirror.row_net: P4
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-7, -19]
+      columns:
+        near:
+          key.row_net: P21
+          key.mirror.row_net: P4
+        home:
+          key.spread: 21.25
+          key.splay: -28
+          key.origin: [-11.75, -9]
+          key.row_net: P20
+          key.mirror.row_net: P5
+        far:
+          key.spread: 21.25
+          key.splay: -28
+          key.origin: [-9.5, -9]
+          key.row_net: P19
+          key.mirror.row_net: P6
+      rows:
+        thumb:
+          column_net: P7
+  rotate: -20
+  mirror:
+    ref: matrix_pinky_home
+    distance: 223.7529778
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [u, u]
+  keys:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [u-0.5,u-0.5]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [-0.6u,0.6u]
+        - ref: matrix_ring_top
+          shift: [-0.6u,0.6u]
+        - ref: matrix_middle_top
+          shift: [-0.6u,0.6u]
+        - ref: matrix_middle_top
+          shift: [0.6u,0.6u]
+        - ref: matrix_index_top
+          shift: [0.6u,0.6u]
+        - ref: matrix_inner_top
+          shift: [0.6u,0.6u]
+        - ref: mirror_matrix_inner_top
+          shift: [0.6u,0.6u]
+        - ref: mirror_matrix_index_top
+          shift: [0.6u,0.6u]
+        - ref: mirror_matrix_middle_top
+          shift: [0.6u,0.6u]
+        - ref: mirror_matrix_middle_top
+          shift: [-0.6u,0.6u]
+        - ref: mirror_matrix_ring_top
+          shift: [-0.6u,0.6u]
+        - ref: mirror_matrix_pinky_top
+          shift: [-0.6u,0.6u]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-0.6u,-0.6u]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [0.6u,-0.6u]
+        - ref: mirror_matrix_ring_bottom
+          shift: [0.6u,-0.6u]
+        - ref: mirror_matrix_index_bottom
+          shift: [-0.6u,-0.6u]
+        - ref: mirror_thumbfan_near_thumb
+          shift: [-0.6u,-0.6u]
+        - ref: mirror_thumbfan_home_thumb
+          shift: [-0.6u,-0.6u]
+        - ref: mirror_thumbfan_home_thumb
+          shift: [0.6u,-0.6u]
+        - ref: mirror_thumbfan_far_thumb
+          shift: [0.6u,-0.6u]
+        - ref: mirror_thumbfan_far_thumb
+          shift: [0.6u,0.6u]
+        - ref: thumbfan_far_thumb
+          shift: [0.6u,0.6u]
+        - ref: thumbfan_far_thumb
+          shift: [0.6u,-0.6u]
+        - ref: thumbfan_home_thumb
+          shift: [0.6u,-0.6u]
+        - ref: thumbfan_home_thumb
+          shift: [-0.6u,-0.6u]
+        - ref: thumbfan_near_thumb
+          shift: [-0.6u,-0.6u]
+        - ref: matrix_index_bottom
+          shift: [-0.6u,-0.6u]
+        - ref: matrix_ring_bottom
+          shift: [0.6u,-0.6u]
+        - ref: matrix_pinky_bottom
+          shift: [0.6u,-0.6u]
+        - ref: matrix_pinky_bottom
+          shift: [-0.6u,-0.6u]
+      fillet: 3
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
+pcbs:
+  blavinge:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      mx_hotswap:
+        what: mx
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+          what: diode
+          where: true
+          params:
+            from: "{{colrow}}"
+            to: "{{row_net}}"
+          adjust:
+            shift: [0, -5]
+      promicro:
+        what: promicro
+        params: 
+          designator: 'MCU'
+          orientation: 'down'
+          RAW: RAW
+          GND: GND
+          RST: RST
+          VCC: VCC
+          P21: P21
+          P20: P20
+          P19: P19
+          P18: P18
+          P15: P15
+          P14: P14
+          P16: P16
+          P10: P10
+          P1: P1
+          P0: P0
+          P2: P2
+          P3: P3
+          P4: P4
+          P5: P5
+          P6: P6
+          P7: P7
+          P8: P8
+          P9: P9
+        
+        where:
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+          shift: [0,-12]
+          rotate: -90
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref.aggregate.parts: [matrix_inner_bottom, mirror_matrix_inner_bottom]
+          shift: [0, -1]
+          rotate: -90

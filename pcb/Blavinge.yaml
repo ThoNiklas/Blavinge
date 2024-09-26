@@ -1,0 +1,121 @@
+points:
+  zones:
+    matrix:
+      anchor:
+        rotate: 5
+      columns:
+        pinky:
+        ring:
+          key.splay: -5
+          key.origin: [-12, -19]
+          key.stagger: 14
+        middle:
+          key.stagger: 8
+        index:
+          key.stagger: -6
+        inner:
+          key.stagger: -2
+      rows:
+        bottom:
+        home:
+        top:
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-7, -19]
+      columns:
+        near:
+        home:
+          key.spread: 21.25
+          key.splay: -28
+          key.origin: [-11.75, -9]
+        far:
+          key.spread: 21.25
+          key.splay: -28
+          key.origin: [-9.5, -9]
+      rows:
+        thumb:
+  rotate: -20
+  mirror:
+    ref: matrix_pinky_home
+    distance: 223.7529778
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [u, u]
+  keys:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [u-0.5,u-0.5]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_pinky_top
+          shift: [-0.6u,0.6u]
+        - ref: matrix_ring_top
+          shift: [-0.6u,0.6u]
+        - ref: matrix_middle_top
+          shift: [-0.6u,0.6u]
+        - ref: matrix_middle_top
+          shift: [0.6u,0.6u]
+        - ref: matrix_index_top
+          shift: [0.6u,0.6u]
+        - ref: matrix_inner_top
+          shift: [0.6u,0.6u]
+        - ref: mirror_matrix_inner_top
+          shift: [0.6u,0.6u]
+        - ref: mirror_matrix_index_top
+          shift: [0.6u,0.6u]
+        - ref: mirror_matrix_middle_top
+          shift: [0.6u,0.6u]
+        - ref: mirror_matrix_middle_top
+          shift: [-0.6u,0.6u]
+        - ref: mirror_matrix_ring_top
+          shift: [-0.6u,0.6u]
+        - ref: mirror_matrix_pinky_top
+          shift: [-0.6u,0.6u]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [-0.6u,-0.6u]
+        - ref: mirror_matrix_pinky_bottom
+          shift: [0.6u,-0.6u]
+        - ref: mirror_matrix_ring_bottom
+          shift: [0.6u,-0.6u]
+        - ref: mirror_matrix_index_bottom
+          shift: [-0.6u,-0.6u]
+        - ref: mirror_thumbfan_near_thumb
+          shift: [-0.6u,-0.6u]
+        - ref: mirror_thumbfan_home_thumb
+          shift: [-0.6u,-0.6u]
+        - ref: mirror_thumbfan_home_thumb
+          shift: [0.6u,-0.6u]
+        - ref: mirror_thumbfan_far_thumb
+          shift: [0.6u,-0.6u]
+        - ref: mirror_thumbfan_far_thumb
+          shift: [0.6u,0.6u]
+        - ref: thumbfan_far_thumb
+          shift: [0.6u,0.6u]
+        - ref: thumbfan_far_thumb
+          shift: [0.6u,-0.6u]
+        - ref: thumbfan_home_thumb
+          shift: [0.6u,-0.6u]
+        - ref: thumbfan_home_thumb
+          shift: [-0.6u,-0.6u]
+        - ref: thumbfan_near_thumb
+          shift: [-0.6u,-0.6u]
+        - ref: matrix_index_bottom
+          shift: [-0.6u,-0.6u]
+        - ref: matrix_ring_bottom
+          shift: [0.6u,-0.6u]
+        - ref: matrix_pinky_bottom
+          shift: [0.6u,-0.6u]
+        - ref: matrix_pinky_bottom
+          shift: [-0.6u,-0.6u]
+      fillet: 3
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
+        
