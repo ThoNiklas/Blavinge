@@ -1,3 +1,5 @@
+units:
+  screwSize: 1
 points:
   zones:
     matrix:
@@ -201,3 +203,8 @@ pcbs:
           ref.aggregate.parts: [matrix_inner_bottom, mirror_matrix_inner_bottom]
           shift: [0, -1]
           rotate: -90
+     
+cases:
+  bottom:
+    - name: board
+      extrude: 1
