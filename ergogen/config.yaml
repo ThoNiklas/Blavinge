@@ -207,42 +207,52 @@ pcbs:
         what: mountinghole
         where: 
           ref: [matrix_pinky_top]
-          shift: [0.6u, 0.6u]
+          shift: [0.4u, 0.8u]
       holeTopRight: 
         what: mountinghole
         where: 
           ref: [mirror_matrix_pinky_top]
-          shift: [0.6u, 0.6u]
+          shift: [0.4u, 0.8u]
       holeBottomLeft: 
         what: mountinghole
         where: 
           ref: [matrix_pinky_bottom]
-          shift: [0.7u, 0]
+          shift: [0.8u, -0.2u]
       holeBottomRight: 
         what: mountinghole
         where: 
           ref: [mirror_matrix_pinky_bottom]
-          shift: [0.7u, 0]
+          shift: [0.8u, -0.2u]
+      holeBottomLeftMiddle: 
+        what: mountinghole
+        where: 
+          ref: [thumbfan_near_thumb]
+          shift: [-0.8u, 0.2u]
+      holeBottomRightMiddle: 
+        what: mountinghole
+        where: 
+          ref: [mirror_thumbfan_near_thumb]
+          shift: [-0.8u, 0.2u]
       holeTopMiddleLeft: 
         what: mountinghole
         where: 
           ref: [matrix_inner_top]
-          shift: [0.7u, 0]
+          shift: [0.8u, 0]
       holeTopMiddleRight: 
         what: mountinghole
         where: 
           ref: [mirror_matrix_inner_top]
-          shift: [0.7u, 0]
+          shift: [0.8u, 0]
       holeBottomMiddleLeft: 
         what: mountinghole
         where: 
           ref: [matrix_inner_bottom]
-          shift: [0.7u, 0]
+          shift: [0.9u, 0]
       holeBottomMiddleRight: 
         what: mountinghole
         where: 
           ref: [mirror_matrix_inner_bottom]
-          shift: [0.7u, 0]
+          shift: [0.9u, 0]
       holeBottomMiddle: 
         what: mountinghole
         where: 
