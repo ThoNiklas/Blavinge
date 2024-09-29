@@ -8,18 +8,18 @@ points:
         shift: [100, -100]
       columns:
         pinky:
-          key.column_net: P14
+          key.column_net: P16
         ring:
           key.splay: -5
           key.origin: [-12, -19]
           key.stagger: 14
-          key.column_net: P16
+          key.column_net: P14
         middle:
           key.stagger: 8
           key.column_net: P10
         index:
           key.stagger: -6
-          key.column_net: P9
+          key.column_net: P7
         inner:
           key.stagger: -2
           key.column_net: P8   
@@ -39,8 +39,8 @@ points:
         shift: [-7, -19]
       columns:
         near:
-          key.row_net: P21
-          key.mirror.row_net: P4
+          key.row_net: P19
+          key.mirror.row_net: P6
         home:
           key.spread: 21.25
           key.splay: -28
@@ -51,11 +51,11 @@ points:
           key.spread: 21.25
           key.splay: -28
           key.origin: [-9.5, -9]
-          key.row_net: P19
-          key.mirror.row_net: P6
+          key.row_net: P21
+          key.mirror.row_net: P4
       rows:
         thumb:
-          column_net: P7
+          column_net: P9
   rotate: -20
   mirror:
     ref: matrix_pinky_home
@@ -203,8 +203,49 @@ pcbs:
           ref.aggregate.parts: [matrix_inner_bottom, mirror_matrix_inner_bottom]
           shift: [0, -1]
           rotate: -90
-     
-cases:
-  bottom:
-    - name: board
-      extrude: 1
+      holeTopLeft: 
+        what: mountinghole
+        where: 
+          ref: [matrix_pinky_top]
+          shift: [0.6u, 0.6u]
+      holeTopRight: 
+        what: mountinghole
+        where: 
+          ref: [mirror_matrix_pinky_top]
+          shift: [0.6u, 0.6u]
+      holeBottomLeft: 
+        what: mountinghole
+        where: 
+          ref: [matrix_pinky_bottom]
+          shift: [0.7u, 0]
+      holeBottomRight: 
+        what: mountinghole
+        where: 
+          ref: [mirror_matrix_pinky_bottom]
+          shift: [0.7u, 0]
+      holeTopMiddleLeft: 
+        what: mountinghole
+        where: 
+          ref: [matrix_inner_top]
+          shift: [0.7u, 0]
+      holeTopMiddleRight: 
+        what: mountinghole
+        where: 
+          ref: [mirror_matrix_inner_top]
+          shift: [0.7u, 0]
+      holeBottomMiddleLeft: 
+        what: mountinghole
+        where: 
+          ref: [matrix_inner_bottom]
+          shift: [0.7u, 0]
+      holeBottomMiddleRight: 
+        what: mountinghole
+        where: 
+          ref: [mirror_matrix_inner_bottom]
+          shift: [0.7u, 0]
+      holeBottomMiddle: 
+        what: mountinghole
+        where: 
+          ref.aggregate.parts: [thumbfan_far_thumb, mirror_thumbfan_far_thumb]
+          shift: [0, 0]
+
