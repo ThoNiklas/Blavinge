@@ -4,4 +4,6 @@ _autosave*
 *.kicad_pro
 gerber
 OldVersions
+kicad/fp-info-cache
 *.png
+*~lock~
