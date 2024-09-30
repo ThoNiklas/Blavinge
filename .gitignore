@@ -4,3 +4,4 @@ _autosave*
 *.kicad_pro
 gerber
 OldVersions
+*.png
