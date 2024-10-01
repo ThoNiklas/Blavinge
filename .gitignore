@@ -7,3 +7,4 @@ OldVersions
 kicad/fp-info-cache
 *.png
 *~lock~
+case/STL
