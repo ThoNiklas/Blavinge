@@ -8,3 +8,6 @@ kicad/fp-info-cache
 *~lock~
 case/STL
 .vscode
+case/Cura
+case/Slic3r
+*.lnk
