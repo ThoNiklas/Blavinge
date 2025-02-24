@@ -9,3 +9,4 @@ kicad/fp-info-cache
 .vscode
 *.lnk
 */OldVersions
+*.bak
